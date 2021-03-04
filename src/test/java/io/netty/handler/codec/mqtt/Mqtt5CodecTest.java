@@ -266,8 +266,7 @@ public class Mqtt5CodecTest {
                 case RETAIN_AVAILABLE:
                 case WILDCARD_SUBSCRIPTION_AVAILABLE:
                 case SUBSCRIPTION_IDENTIFIER_AVAILABLE:
-                case SHARED_SUBSCRIPTION_AVAILABLE:
-                {
+                case SHARED_SUBSCRIPTION_AVAILABLE: {
                     final Integer expectedValue = ((MqttProperties.IntegerProperty) expectedProperty).value;
                     final Integer actualValue = ((MqttProperties.IntegerProperty) actualProperty).value;
                     assertEquals("one byte property doesn't match", expectedValue, actualValue);
@@ -277,8 +276,7 @@ public class Mqtt5CodecTest {
                 case SERVER_KEEP_ALIVE:
                 case RECEIVE_MAXIMUM:
                 case TOPIC_ALIAS_MAXIMUM:
-                case TOPIC_ALIAS:
-                {
+                case TOPIC_ALIAS: {
                     final Integer expectedValue = ((MqttProperties.IntegerProperty) expectedProperty).value;
                     final Integer actualValue = ((MqttProperties.IntegerProperty) actualProperty).value;
                     assertEquals("two byte property doesn't match", expectedValue, actualValue);
@@ -288,16 +286,14 @@ public class Mqtt5CodecTest {
                 case PUBLICATION_EXPIRY_INTERVAL:
                 case SESSION_EXPIRY_INTERVAL:
                 case WILL_DELAY_INTERVAL:
-                case MAXIMUM_PACKET_SIZE:
-                {
+                case MAXIMUM_PACKET_SIZE: {
                     final Integer expectedValue = ((MqttProperties.IntegerProperty) expectedProperty).value;
                     final Integer actualValue = ((MqttProperties.IntegerProperty) actualProperty).value;
                     assertEquals("four byte property doesn't match", expectedValue, actualValue);
                     break;
                 }
                 // four byte value integer property
-                case SUBSCRIPTION_IDENTIFIER:
-                {
+                case SUBSCRIPTION_IDENTIFIER: {
                     final Integer expectedValue = ((MqttProperties.IntegerProperty) expectedProperty).value;
                     final Integer actualValue = ((MqttProperties.IntegerProperty) actualProperty).value;
                     assertEquals("variable byte integer property doesn't match", expectedValue, actualValue);
@@ -311,8 +307,7 @@ public class Mqtt5CodecTest {
                 case RESPONSE_INFORMATION:
                 case SERVER_REFERENCE:
                 case REASON_STRING:
-                case USER_PROPERTY:
-                {
+                case USER_PROPERTY: {
                     final String expectedValue = ((MqttProperties.StringProperty) expectedProperty).value;
                     final String actualValue = ((MqttProperties.StringProperty) actualProperty).value;
                     assertEquals("String property doesn't match", expectedValue, actualValue);
@@ -320,8 +315,7 @@ public class Mqtt5CodecTest {
                 }
                 // byte[] property
                 case CORRELATION_DATA:
-                case AUTHENTICATION_DATA:
-                {
+                case AUTHENTICATION_DATA: {
                     final byte[] expectedValue = ((MqttProperties.BinaryProperty) expectedProperty).value;
                     final byte[] actualValue = ((MqttProperties.BinaryProperty) actualProperty).value;
                     final String expectedHexDump = ByteBufUtil.hexDump(expectedValue);
